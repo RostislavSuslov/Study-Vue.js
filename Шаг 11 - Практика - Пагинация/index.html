@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Шаг 11 - Практика - Пагинация</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<style>
+body{
+	padding: 50px;
+}
+</style>
+<body>
+	<div id="app" class="container">
+		<ul class="list-group">
+			<li v-for="item in collection" class="list-group-item">
+				{{ item }}
+			</li>
+		</ul>
+		<hr>
+		<div class="btn-toolbar">
+			<div class="btn-group">
+				<button class="btn btn-primary" v-for="p in pagination.pages" @click.prevent="setPage(p)">
+					{{p}}
+				</button>
+			</div>
+		</div>
+		Displaying from indexes {{ pagination.startIndex }} to {{ pagination.endtIndex }}
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+	<script src="script.js"></script>
+</body>

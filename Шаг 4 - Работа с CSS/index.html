@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Шаг 4 - Работа с CSS</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+	.large{
+	font-size: 50px;
+}
+</style>
+<body>
+	<div id="app">
+		<h1>{{title}}</h1>
+		<button v-bind:class="[sizeTpggle ? 'large' : '', {'rounded': isRounded}]"
+				v-bind:style="styles"
+				v-bind:disabled="disabled">Start!</button>
+				<ul>
+					<li><input type="checkbox" v-model="sizeToggle"> <label for="">Увеличить шрифт</label></li>
+					<li><input type="checkbox" v-model="isRounded"> <label for="">Округлить</label></li>
+					<li><input type="checkbox" v-model="disabled"> <label for="">disabled</label></li>
+
+					<li><input type="text" v-model="fontColor"></li>
+					<li><input type="text" v-model="backgroundColor"></li>
+				</ul>
+	</div>	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>

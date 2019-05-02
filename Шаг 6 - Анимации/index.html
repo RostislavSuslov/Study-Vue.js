@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Шаг 6 - Анимации</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+	.box{
+		height: 100px;
+		width: 100px;
+		border-radius: 20px;
+		background: #CC11ff;
+	}
+	.newanim-enter-active{
+		transition: newanim-in .5s;
+	}
+	.newanim-leave-active{
+		animation: newanim-in .5s reverse;
+	}
+	@keyframes newanim-in{
+		0%{
+			transform: scale(0);
+		}
+		50%{
+			transform: scale(1.5);
+		}
+		100%{
+			transform: scale(1)
+		}
+	}
+</style>
+<body>
+	<div id="demo">
+		<div class="cotainer">
+
+			<button v-on:click="show = !show" class="btn btn-primary" >Toggle</button>
+			<transition name="newanim">
+				<div class="box" v-if="show"></div>
+			</transition>
+		</div>
+	</div>	
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Шаг 2</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div class="header">
+			<div v-if="view" v-html="nav" class="nav-container"></div>
+			<div v-else="view">123456789</div>
+		</div>
+		<input type="text" v-model="message">
+		<h1>{{message}}</h1>
+		<input type="checkbox" v-model="checked">
+		<label for="checkbox">{{checked}}</label>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
